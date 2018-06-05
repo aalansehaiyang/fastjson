@@ -6,6 +6,7 @@ import lombok.Data;
 public class Person {
 
     Store store;
+    Book  book;
 
     @Data
     static class Store {

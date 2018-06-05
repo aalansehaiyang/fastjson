@@ -19,7 +19,7 @@ import com.alibaba.fastjson.path.Person.Book;
 public class JSONpathControllerTest {
 
     @Test
-    public void test5() {
+    public void readPath() {
         String jsonStr = "{\n" +
                 "    \"store\": {\n" +
                 "        \"bicycle\": {\n" +
@@ -81,6 +81,15 @@ public class JSONpathControllerTest {
 
         System.out.println("bicycle的color和price属性值={}" + read);
 
+    }
+
+    @Test
+    public void setPath() {
+        JSONObject object = new JSONObject();
+        JSONPath.set(object, "store.bicycle.color", "red");
+        JSONPath.set(object, "store.bicycle.price", 8.6);
+        JSONPath.set(object, "book.author", "java入门");
+        System.out.println(object.toJSONString());
     }
 
 }
